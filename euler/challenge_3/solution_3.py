@@ -1,18 +1,24 @@
 factors = []
 primes = []
-max_number = 13195
+max_number = 600851475143
 
 def isPrimeNumber(number):
-    print (number)
+    for z in range (2, int(number / 2 )):
+        if number % z == 0:
+           return False
+    return True
 
-for n in range (1 , max_number):
-    if max_number % n == 0 :
+
+for n in range(1 , int(max_number / 2)):
+    if n % 100000000 == 0:
+        print ("....." + str(n) + " no of factors found so far: " + str(len(factors)))
+    if max_number % n == 0:
         factors.append (n)
+print ("finished factors")
+print (len(factors))
 
 for x in factors:
-    isPrimeNumber(x)
+    if isPrimeNumber(x):
+        print (x)
 
-print (factors)
-print (factors[0])
-
-
+# 6857
